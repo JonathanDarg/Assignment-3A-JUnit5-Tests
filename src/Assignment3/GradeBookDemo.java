@@ -9,25 +9,25 @@ package Assignment3;
 
 public class GradeBookDemo {
     public static void main(String[] args) {
-        GradeBook gb = new GradeBook();
+        GradeBook gradeBook = new GradeBook();
 
-        gb.setWeight("HW1", 0.2);
-        gb.setWeight("HW2", 0.3);
-        gb.setWeight("Exam", 0.5);
+        gradeBook.setAssignmentWeight("HW1", 0.2);
+        gradeBook.setAssignmentWeight("HW2", 0.3);
+        gradeBook.setAssignmentWeight("Exam", 0.5);
 
-        gb.addGrade("Alice", "HW1", 90);
-        gb.addGrade("Alice", "HW2", 80);
-        gb.addGrade("Alice", "Exam", 85);
+        gradeBook.addStudentGrade("Alice", "HW1", 90);
+        gradeBook.addStudentGrade("Alice", "HW2", 80);
+        gradeBook.addStudentGrade("Alice", "Exam", 85);
 
-        gb.addGrade("Bob", "HW1", 100);
-        gb.addGrade("Bob", "HW2", 90);
-        gb.addGrade("Bob", "Exam", 70);
+        gradeBook.addStudentGrade("Bob", "HW1", 100);
+        gradeBook.addStudentGrade("Bob", "HW2", 90);
+        gradeBook.addStudentGrade("Bob", "Exam", 70);
 
-        System.out.println("Alice final: " + gb.getFinalGrade("Alice"));
-        System.out.println("Alice letter: " + gb.getLetterGrade("Alice"));
+        System.out.println("Alice's final grade: " + gradeBook.calculateFinalGrade("Alice"));
+        System.out.println("Alice's letter grade: " + gradeBook.getLetterGrade("Alice"));
 
-        System.out.println("Bob final: " + gb.getFinalGrade("Bob"));
-        System.out.println("Bob letter: " + gb.getLetterGrade("Bob"));
+        System.out.println("Bob's final grade: " + gradeBook.calculateFinalGrade("Bob"));
+        System.out.println("Bob's letter grade: " + gradeBook.getLetterGrade("Bob"));
+
     }
 }
-

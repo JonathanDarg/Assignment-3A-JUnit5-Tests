@@ -11,28 +11,28 @@ import java.util.*;
 
 public class StudentRecord {
 
-    private String name;
-    private Map<String, Double> grades;
+    private String studentName;
+    private Map<String, Double> assignmentScores;
 
-    public StudentRecord(String name) {
-        this.name = name;
-        this.grades = new HashMap<>();
+    public StudentRecord(String studentName) {
+        this.studentName = studentName;
+        this.assignmentScores = new HashMap<>();
     }
 
-    public void addGrade(String assignment, double score) {
-        grades.put(assignment, score);
+    public void addAssignmentScore(String assignmentName, double score) {
+        assignmentScores.put(assignmentName, score);
     }
 
-    public Double getScore(String assignment) {
-        return grades.get(assignment);
+    public Double getAssignmentScore(String assignmentName) {
+        return assignmentScores.get(assignmentName);
     }
 
-    public Map<String, Double> getAllGrades() {
-        return grades;
+    public Map<String, Double> getAllAssignmentScores() {
+        return assignmentScores;
     }
 
-    public String getName() {
-        return name;
+    public String getStudentName() {
+        return studentName;
     }
 
     // BUG #10: No reset or clear method — stale data across runs
