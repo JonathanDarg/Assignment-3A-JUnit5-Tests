@@ -26,7 +26,7 @@ public class GradeBook {
         if (!allStudents.containsKey(studentName)) {
             allStudents.put(studentName, new StudentRecord(studentName));
         }
-        allStudents.get(studentName).addGrade(assignment, score);
+        allStudents.get(studentName).addAssignmentScore(assignment, score);
     }
 
     public void setAssignmentWeight(String assignment, double weight) {
@@ -55,7 +55,7 @@ public class GradeBook {
             if (assignmentCount == assignmentWeights.size() - 1) break;
             assignmentCount++;
 
-            Double studentScore = student.getScore(assignmentName);
+            Double studentScore = student.getAssignmentScore(assignmentName);
             if (studentScore != null) {
                 totalPoints += studentScore * assignmentWeight;
             }
